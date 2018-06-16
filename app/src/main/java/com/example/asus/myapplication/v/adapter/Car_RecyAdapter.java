@@ -2,43 +2,37 @@ package com.example.asus.myapplication.v.adapter;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.asus.myapplication.R;
-import com.example.asus.myapplication.m.bean.HomeBean;
-import com.example.asus.myapplication.m.bean.ProductListBean;
+import com.example.asus.myapplication.m.bean.CarBean;
 import com.example.asus.myapplication.m.netUtil.FrescoUtil;
-import com.example.asus.myapplication.v.activity.ProductListActivity;
-import com.example.asus.myapplication.v.activity.XiangQingActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductList_RecyAdapter extends RecyclerView.Adapter {
+public class Car_RecyAdapter extends RecyclerView.Adapter {
     private Context context;
-    private View item;
 
-    public ProductList_RecyAdapter(Context context) {
+    public Car_RecyAdapter(Context context) {
         this.context = context;
     }
 
-    private List<ProductListBean.DataBean> list = new ArrayList<>();
+    private List<CarBean.DataBean.ListBean> list = new ArrayList<>();
 
-    public void setData(List<ProductListBean.DataBean> list) {
+    public void setData(List<CarBean.DataBean.ListBean> list) {
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(context).inflate(R.layout.productlist_recy_item, parent, false);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.Car_item, parent, false);
         return new MyViewHolder(inflate);
     }
 
@@ -53,18 +47,7 @@ public class ProductList_RecyAdapter extends RecyclerView.Adapter {
             s = images.substring(0, i);
         }
         FrescoUtil.setJianJin(s, viewHolder.sdv_product_list_item);
-        viewHolder.tv_product_list_item1.setText(list.get(position).getTitle());
-
-        item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, XiangQingActivity.class);
-                Log.e("123", "onClick: "+list.get(position).getPid() );
-                intent.putExtra("pid", list.get(position).getPid());
-                context.startActivity(intent);
-            }
-        });
-
+        viewHolder.tv_product_list_item1.setText(list.get(position).getPrice());
     }
 
     @Override
@@ -78,9 +61,8 @@ public class ProductList_RecyAdapter extends RecyclerView.Adapter {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            item = itemView;
-            sdv_product_list_item = itemView.findViewById(R.id.sdv_product_list_item);
-            tv_product_list_item1 = itemView.findViewById(R.id.tv_product_list_item1);
+            sdv_product_list_item = itemView.findViewById(R.id.Car_img);
+            tv_product_list_item1 = itemView.findViewById(R.id.Car_tex);
         }
 
     }

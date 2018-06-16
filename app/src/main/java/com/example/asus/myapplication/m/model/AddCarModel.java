@@ -1,13 +1,11 @@
 package com.example.asus.myapplication.m.model;
 
 
-import android.util.Log;
-
 import com.example.asus.myapplication.m.api.ApiService;
-import com.example.asus.myapplication.m.bean.ProductListBean;
+import com.example.asus.myapplication.m.bean.AddCarBean;
+import com.example.asus.myapplication.m.bean.xiangqingBean;
 import com.example.asus.myapplication.m.netUtil.RetrofitUtil;
 import com.example.base.mvp.BaseModel;
-
 
 import java.util.HashMap;
 
@@ -17,26 +15,25 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class ProductListModel extends BaseModel {
+public class AddCarModel extends BaseModel {
 
-    public void productlist(HashMap<String, String> map, final Imodelview imodelview) {
+    public void AddCar(HashMap<String, String> map, final IAddCarmodelview iAddCarmodelview) {
 
-      //  Log.e("123", "productlist: "+map );
         ApiService retrofitInterface = RetrofitUtil.getInstance().getRetrofitInterface();
-        Observable<ProductListBean> getproductlist = retrofitInterface.getProduct(map);
-        getproductlist.subscribeOn(Schedulers.io())
+        Observable<AddCarBean> getAddCar = retrofitInterface.getAddCar(map);
+        getAddCar.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ProductListBean>() {
+                .subscribe(new Observer<AddCarBean>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(ProductListBean productListBean) {
-                if (productListBean != null) {
-                  //  Log.e("123", "onNext: "+productListBean );
-                    imodelview.productm(productListBean);
+            public void onNext(AddCarBean addCarBean) {
+                if (addCarBean != null) {
+                    iAddCarmodelview.AddCarm(addCarBean);
+
                 }
             }
 
@@ -52,7 +49,7 @@ public class ProductListModel extends BaseModel {
     }
 
 
-    public interface Imodelview {
-        void productm(ProductListBean productListBean);
+    public interface IAddCarmodelview {
+        void AddCarm(AddCarBean addCarBean);
     }
 }

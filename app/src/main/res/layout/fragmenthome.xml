@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:background="@null">
+      >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -50,12 +50,13 @@
         android:text="热搜"
         android:textSize="20sp" />
 
-    <com.example.mall.view.custom.CustomView
+   <com.example.asus.myapplication.v.customview.customView
         android:id="@+id/search_flowlayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        android:paddingTop="10dp"></com.example.mall.view.custom.CustomView>
+        android:paddingTop="10dp">
+   </com.example.asus.myapplication.v.customview.customView>
 
     <Button
         android:id="@+id/search_clear"

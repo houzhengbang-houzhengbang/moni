@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.asus.myapplication.R;
 import com.example.asus.myapplication.m.bean.HomeBean;
@@ -77,6 +78,7 @@ public class FragmentHome extends BaseFragment<HomePresenter> implements HomeInt
                 textView.setTextSize(20);
                 textView.setText(s);
                 mSearchFlowlayout.addView(textView);
+                Toast.makeText(getActivity(),""+s,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), ProductListActivity.class);
                 intent.putExtra("123",s);
                 startActivity(intent);

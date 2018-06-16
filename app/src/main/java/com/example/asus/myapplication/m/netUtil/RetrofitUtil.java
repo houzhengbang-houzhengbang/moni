@@ -54,7 +54,7 @@ public class RetrofitUtil {
     //默认的baseUrl
     public static RetrofitUtil getInstance(){
         if (null == retrofitUtil){
-            return  getInstance("www.zhaoapi.cn/");
+            return  getInstance("https://www.zhaoapi.cn/");
         }
         return retrofitUtil;
     }

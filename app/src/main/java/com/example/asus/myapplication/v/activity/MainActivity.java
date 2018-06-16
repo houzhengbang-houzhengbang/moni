@@ -4,15 +4,18 @@ package com.example.asus.myapplication.v.activity;
 import android.graphics.Color;
 
 import com.example.asus.myapplication.R;
+import com.example.asus.myapplication.m.model.AddCarModel;
 import com.example.asus.myapplication.m.model.MainModel;
 import com.example.asus.myapplication.p.MainPresenter;
 import com.example.asus.myapplication.v.fragment.FragmentCar;
 import com.example.asus.myapplication.v.fragment.FragmentHome;
+import com.example.asus.myapplication.v.interfaces.AddCarInterface;
 import com.example.base.BaseActivity;
 import com.example.base.mvp.BaseModel;
+import com.example.base.mvp.BasePresenter;
 import com.hjm.bottomtabbar.BottomTabBar;
 
-public class MainActivity extends BaseActivity<MainPresenter> {
+public class MainActivity extends BaseActivity<MainPresenter, BasePresenter<AddCarModel, AddCarInterface>> {
 
 
     private BottomTabBar bottombar;

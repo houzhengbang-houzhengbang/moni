@@ -28,19 +28,17 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':base')
     implementation 'org.greenrobot:greendao:3.2.0'
-
     //底部导航栏
     implementation 'com.hjm:BottomTabBar:1.1.1'
-//MVP library 库
+    //MVP library 库
     implementation project(':base')
-//fresco
+    //fresco
     implementation 'com.facebook.fresco:fresco:1.9.0'
-//recycleview
+    //recycleview
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-//butterKnife
+    //butterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     //retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -51,9 +49,8 @@ dependencies {
     //okhttp3
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
-
 greendao {
     schemaVersion 1
     daoPackage 'com.example.app.gen'

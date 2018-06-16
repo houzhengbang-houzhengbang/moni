@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
 
-    <ScrollView
+<!--    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -22,8 +22,8 @@
             </bwei.com.wanghongyun201804231.utils.MyExpanableListView>
 
         </LinearLayout>
-    </ScrollView>
-    <RelativeLayout
+    </ScrollView>-->
+<!--    <RelativeLayout
         android:id="@+id/relative_progress"
         android:visibility="gone"
         android:layout_above="@+id/linear_bottom"
@@ -38,8 +38,15 @@
             android:layout_height="wrap_content" />
 
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/Car_recy"
+        android:layout_height="fill_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:orientation="horizontal"

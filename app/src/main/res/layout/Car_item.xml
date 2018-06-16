@@ -5,15 +5,13 @@
     android:orientation="horizontal">
 
     <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/sdv_product_list_item"
-        placeholderImage="@mipmap/ic_launcher"
+        android:id="@+id/Car_img"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center" />
 
-
     <TextView
-        android:id="@+id/tv_product_list_item1"
+        android:id="@+id/Car_tex"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_gravity="center"
